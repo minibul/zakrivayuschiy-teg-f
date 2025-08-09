@@ -10,18 +10,48 @@ html {
 
 body {
   margin: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Создаем отдельный слой для фона */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background-image: var(--page-background);
   background-size: auto;
   background-attachment: scroll;
-  min-height: 100vh;
-  overflow-x: hidden;
+  z-index: -1;
 }
 
-/* Фикс для мобильных устройств */
+/* Оптимизация для мобильных устройств */
 @media (max-width: 768px) {
-  body {
+  body::before {
     background-attachment: scroll;
-    background-size: auto;
+    background-size: 4px 4px, 4px 4px, 100% 100%;
+    background-repeat: repeat, repeat, no-repeat;
+    background-position: 0 0, 0 0, center center;
+    /* Аппаратное ускорение */
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    will-change: transform;
+  }
+}
+
+/* Дополнительный фикс для iOS Safari */
+@supports (-webkit-touch-callout: none) {
+  @media (max-width: 768px) {
+    body::before {
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      -webkit-perspective: 1000px;
+      perspective: 1000px;
+    }
   }
 }
 
