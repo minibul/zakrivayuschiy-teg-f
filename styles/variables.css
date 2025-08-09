@@ -1,1 +1,40 @@
-/* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+:root {
+  --main-font: "Inter-Variable", "Inter", sans-serif;
+  --accent-font: "PressStart2P", "Courier New", monospace;
+
+  --main-font-weight: 400;
+  --card-heading-font-weight: 700;
+
+  --content-width: clamp(320px, 100%, 700px);
+  --header-padding: clamp(100px, 1rem + 2vw, 136px);
+  --logo-font-size: clamp(14px, 2.5vw, 23px);
+  --heading-font-size: clamp(28px, 4rem + 2vw, 65px);
+
+  --card-title-font-size: clamp(18px, 1.2vw, 18px);
+  --card-text-font-size: 18px;
+  --card-content-padding: 25px;
+  --button-font-size: clamp(14px, 1vw, 14px);
+  --text-outline-color: #fff;
+
+  --page-background: repeating-linear-gradient(
+      90deg,
+      #d3d3d3 0px,
+      #d3d3d3 2px,
+      transparent 2px,
+      transparent 4px
+    ),
+    repeating-linear-gradient(
+      180deg,
+      #d3d3d3 0px,
+      #d3d3d3 2px,
+      transparent 2px,
+      transparent 4px
+    ),
+    linear-gradient(180deg, #e7e7e7 0.01%, #1a1a1a 100%);
+
+  --heart-contour-color: currentColor;
+  --heart-accent-color: currentColor;
+  --heart-like-color: #ff0000;
+  --heart-fill-initial: transparent;
+  --heart-translate-offset: 6px;
+}
