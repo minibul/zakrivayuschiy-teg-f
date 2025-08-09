@@ -11,10 +11,18 @@ html {
 body {
   margin: 0;
   background-image: var(--page-background);
-  background-size: cover;
-  background-attachment: fixed;
+  background-size: auto;
+  background-attachment: scroll;
   min-height: 100vh;
   overflow-x: hidden;
+}
+
+/* Фикс для мобильных устройств */
+@media (max-width: 768px) {
+  body {
+    background-attachment: scroll;
+    background-size: auto;
+  }
 }
 
 h1,
