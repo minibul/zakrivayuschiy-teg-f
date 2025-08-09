@@ -163,16 +163,6 @@
   gap: 6px;
 }
 
-.card__icon-button {
-  background: transparent;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .card__like-button {
   background: var(--bg-color, #fff);
   border: 2px solid currentColor;
@@ -190,14 +180,12 @@
   gap: 8px;
 }
 
-.like-icon {
-  width: 39px;
-  height: 36px;
-  fill: currentColor;
-}
-
 .button__text {
   display: inline-block;
+  position: relative;
+  z-index: 1;
+  color: #fff;
+  mix-blend-mode: difference;
 }
 
 .save-button-container {
@@ -246,13 +234,6 @@
   box-shadow: 2px 2px 0px 0px currentColor;
 }
 
-.button__text {
-  position: relative;
-  z-index: 1;
-  color: #fff;
-  mix-blend-mode: difference;
-}
-
 .button::before {
   content: "";
   position: absolute;
@@ -280,6 +261,9 @@
 }
 
 .like-icon {
+  width: 39px;
+  height: 36px;
+  fill: currentColor;
   color: currentColor;
 }
 
