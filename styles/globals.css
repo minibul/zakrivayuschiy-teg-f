@@ -25,35 +25,11 @@ body::before {
   height: 100%;
   background-image: var(--page-background);
   background-size: auto;
-  background-attachment: scroll;
+  background-attachment: fixed;
   z-index: -1;
 }
 
-/* Оптимизация для мобильных устройств */
-@media (max-width: 768px) {
-  body::before {
-    background-attachment: scroll;
-    background-size: 4px 4px, 4px 4px, 100% 100%;
-    background-repeat: repeat, repeat, no-repeat;
-    background-position: 0 0, 0 0, center center;
-    /* Аппаратное ускорение */
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-    will-change: transform;
-  }
-}
-
-/* Дополнительный фикс для iOS Safari */
-@supports (-webkit-touch-callout: none) {
-  @media (max-width: 768px) {
-    body::before {
-      -webkit-backface-visibility: hidden;
-      backface-visibility: hidden;
-      -webkit-perspective: 1000px;
-      perspective: 1000px;
-    }
-  }
-}
+/* (опционально) дополнительные оптимизации для мобильных могут быть добавлены при необходимости */
 
 h1,
 h2,
